@@ -205,12 +205,12 @@ const cardNumberValidator = () => {
 	} else if (/^[0-9]{0,12}$/.test(numberValue.value)) {
 		cardNumber.style.borderColor = 'red';
 		cardNumberLabel.style.color = 'red';
-		cardNumberLabel.innerHTML = 'Number must be between 13 and 16 digits long';
+		cardNumberLabel.innerHTML = 'Number between 13 and 16 digits long';
 		return false;
 	} else if (!cardNumberRegex(numberValue)) {
 		cardNumber.style.borderColor = 'red';
 		cardNumberLabel.style.color = 'red';
-		cardNumberLabel.innerHTML = 'Number must be between 13 and 16 digits long';
+		cardNumberLabel.innerHTML = 'Number between 13 and 16 digits long';
 	} else {
 		cardNumber.style.borderColor = 'lightgreen';
 		cardNumberLabel.style.color = 'lightgreen';
