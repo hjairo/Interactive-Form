@@ -1,5 +1,8 @@
 // Interactive Form Project - Jairo Hernandez
-// GOING FOR EXCEEDS EXPECTATIONS GRADE
+
+/*
+GOING FOR EXCEEDS EXPECTATIONS GRADE
+*/
 
 //sets the focus on the name input field
 const name = document.getElementById('name');
