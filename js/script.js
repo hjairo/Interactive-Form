@@ -1,12 +1,13 @@
 // Interactive Form Project - Jairo Hernandez
+// GOING FOR EXCEEDS EXPECTATIONS GRADE
 
-// global variables
+//sets the focus on the name input field
 const name = document.getElementById('name');
-const jobRole = document.getElementById('title');
-const otherJobRole = document.getElementById('other-title');
 name.focus();
 
 // Initially hides the Other job role text field but displays it when selected
+const jobRole = document.getElementById('title');
+const otherJobRole = document.getElementById('other-title');
 otherJobRole.style.display = 'none';
 jobRole.addEventListener('change', () => {
 	jobRole.value === 'other' ?
@@ -28,7 +29,6 @@ colorOptions = colorsDropdown.options;
 const selectTheme = themeSelected[0];
 selectTheme.selected = true;
 selectTheme.hidden = true;
-
 themeSelected.addEventListener('change', () => {
 	colorDiv.hidden = false;
 	for (let i = 0; i < colorsDropdown.length; i++) {
@@ -100,7 +100,6 @@ bitCoin.hidden = true;
 const selectPaymentMethod = paymentDropdown[0];
 selectPaymentMethod.selected = true;
 selectPaymentMethod.hidden = true;
-
 paymentDropdown.addEventListener('change', () => {
 	if (paymentDropdown.value === 'credit card') {
 		creditCard.style.display = 'block';
@@ -117,12 +116,13 @@ paymentDropdown.addEventListener('change', () => {
 	}
 });
 
-// Form validation
+// Form validation - real-time validations for each text field
+// name input is valid if there is more than 1 character for their name
 name.placeholder = 'John Smith';
 const nameLabel = name.labels[0];
 const nameValidator = () => {
 	const nameValue = name.value;
-	if (nameValue.length > 0) {
+	if (nameValue.length > 1) {
 		name.style.borderColor = 'lightgreen';
 		nameLabel.style.color = 'lightgreen';
 		nameLabel.innerHTML = 'Hello, ' + name.value;
@@ -135,6 +135,7 @@ const nameValidator = () => {
 name.addEventListener('keyup', (e) => {
 	nameValidator();
 });
+// email input is valid if there is an '@' symbol with a '.' symbol after, in the text field
 const email = document.getElementById('mail');
 email.placeholder = 'example@email.com';
 const emailLabel = email.labels[0];
@@ -157,6 +158,7 @@ const emailValidator = () => {
 email.addEventListener('keyup', (e) => {
 	emailValidator();
 });
+// requires at least 1 activity to be registered
 const activityValidator = () => {
 	const activitiesHeader = document.querySelector('.activities legend');
 	let checked = 0;
@@ -182,10 +184,11 @@ activities.addEventListener('mouseout', (e) => {
 activities.addEventListener('click', (e) => {
 	activityValidator();
 });
+
+// card input must be digits and between 13 and 16 digits long
 function cardNumberRegex(cardNumber) {
   return /^\d{13,16}$/.test(cardNumber);
 }
-
 const cardNumber = document.getElementById('cc-num');
 cardNumber.placeholder = '1234567890123'
 const cardNumberLabel = cardNumber.labels[0];
@@ -215,6 +218,8 @@ const cardNumberValidator = () => {
 cardNumber.addEventListener('keyup', (e) => {
 	cardNumberValidator();
 });
+
+// zip code input must be a digit and 5 digits long
 function zipRegex(zip) {
   return /^\d{5}$/.test(zip);
 }
@@ -241,6 +246,7 @@ zipCode.addEventListener('keyup', (e) => {
 	zipValidator();
 });
 
+// cvv input must be a digit and 3 digits long
 function cvvRegex(cvv) {
   return /^\d{3}$/.test(cvv);
 }
@@ -263,6 +269,7 @@ cvv.addEventListener('keyup', (e) => {
 	cvvValidator();
 });
 
+//submit button checks to see if the validator functions are met. Otherwise it will not submit data for the form
 const submit = document.querySelector('form');
 submit.addEventListener('submit', (e) => {
 nameValidator();
