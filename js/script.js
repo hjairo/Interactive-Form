@@ -96,12 +96,13 @@ activities.addEventListener('change', (e) => {
 const paymentDropdown = document.getElementById('payment');
 const creditCard = document.getElementById('credit-card');
 creditCard.selected = true;
+const card = paymentDropdown.value = 'credit card';
+card.selected = true;
 const payPal = document.getElementById('paypal');
 payPal.hidden = true;
 const bitCoin = document.getElementById('bitcoin');
 bitCoin.hidden = true;
 const selectPaymentMethod = paymentDropdown[0];
-selectPaymentMethod.selected = true;
 selectPaymentMethod.hidden = true;
 paymentDropdown.addEventListener('change', () => {
 	if (paymentDropdown.value === 'credit card') {
@@ -278,12 +279,19 @@ submit.addEventListener('submit', (e) => {
 nameValidator();
 emailValidator();
 activityValidator();
-cardNumberValidator();
-zipValidator();
-cvvValidator();
 
-
-  if (!nameValidator() || !emailValidator() || !activityValidator() || !cardNumberValidator() || !zipValidator() || !cvvValidator()) {
-    e.preventDefault();
-  }
+	if (!nameValidator() || !emailValidator() || activityValidator()) {
+    	console.log('input not submitted');
+    	e.preventDefault();
+    } //else { e.event.target; }
+	if (payment.value === 'credit card') {
+	cardNumberValidator();
+	zipValidator();
+	cvvValidator();
+		if (!cardNumberValidator() || !zipValidator() || !cvvValidator()) {
+			console.log('card info not submitted');
+			e.preventDefault();
+		} //else { e.event.target; }
+	};
+  console.log('submitted');
 });
