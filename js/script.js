@@ -131,8 +131,8 @@ const nameValidator = () => {
 		nameLabel.style.color = '#457644';
 		nameLabel.innerHTML = 'Hello, ' + name.value;
 	} else {
-		name.style.borderColor = 'red';
-		nameLabel.style.color = 'red';
+		name.style.borderColor = '#990000';
+		nameLabel.style.color = '#990000';
 		nameLabel.innerHTML = 'Name is required';
 	}
 } 
@@ -153,8 +153,8 @@ const emailValidator = () => {
 		emailLabel.innerHTML = 'Thanks!';
 		return true;
 	} else {
-		email.style.borderColor = 'red';
-		emailLabel.style.color = 'red';
+		email.style.borderColor = '#990000';
+		emailLabel.style.color = '#990000';
 		emailLabel.innerHTML = 'Valid email is required';
 		return false;
 	}
@@ -174,8 +174,8 @@ const activityValidator = () => {
 		}
 	}
 	if (checked === 0) {
-		activitiesHeader.style.color = 'red';
-		total.style.color = 'red';
+		activitiesHeader.style.color = '#990000';
+		total.style.color = '#990000';
 		total.innerHTML = 'Registering for an activity is required';
 		return false;
 	} else if (checked > 0) {
@@ -199,18 +199,18 @@ const cardNumberLabel = cardNumber.labels[0];
 const cardNumberValidator = () => {
 	const numberValue = cardNumber.value;
 	if(numberValue === '') {
-		cardNumber.style.borderColor = 'red';
-		cardNumberLabel.style.color = 'red';
+		cardNumber.style.borderColor = '#990000';
+		cardNumberLabel.style.color = '#990000';
 		cardNumberLabel.innerHTML = 'Please enter a credit card number';
 		return false;
 	} else if (/^[0-9]{0,12}$/.test(numberValue.value)) {
-		cardNumber.style.borderColor = 'red';
-		cardNumberLabel.style.color = 'red';
+		cardNumber.style.borderColor = '#990000';
+		cardNumberLabel.style.color = '#990000';
 		cardNumberLabel.innerHTML = 'Number between 13 and 16 digits long';
 		return false;
 	} else if (!cardNumberRegex(numberValue)) {
-		cardNumber.style.borderColor = 'red';
-		cardNumberLabel.style.color = 'red';
+		cardNumber.style.borderColor = '#990000';
+		cardNumberLabel.style.color = '#990000';
 		cardNumberLabel.innerHTML = 'Number between 13 and 16 digits long';
 	} else {
 		cardNumber.style.borderColor = '#9ac7b0';
@@ -239,8 +239,8 @@ const zipValidator = () => {
 		zipLabel.innerHTML = 'Valid Zip Code';
 		return true;
 	} else {
-		zip.style.borderColor = 'red';
-		zipLabel.style.color = 'red';
+		zip.style.borderColor = '#990000';
+		zipLabel.style.color = '#990000';
 		zipLabel.innerHTML = 'Enter a 5 digit Zip';
 		return false;
 	}
@@ -264,8 +264,8 @@ const cvvValidator = () => {
 		cvvLabel.style.color = '#457644';
 		cvvLabel.innerHTML = 'Valid CVV';
 	} else {
-		cvv.style.borderColor = 'red';
-		cvvLabel.style.color = 'red';
+		cvv.style.borderColor = '#990000';
+		cvvLabel.style.color = '#990000';
 		cvvLabel.innerHTML = 'Enter a 3 digit CVV';
 	}
 } 

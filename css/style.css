@@ -16,7 +16,7 @@ button {
 
 body {
   font: 1em/1.5;
-  color: #a4a4a4;
+  color: #34393e;
 	background: #504448;
 }
 
@@ -41,7 +41,7 @@ a {
 
 form {
 	padding: .875em 1.875em 1.875em;
-	background: #fffeff;
+	background: #edecec;
 	border: 2px solid #34393e;
 	border-radius: 12px;
 }
@@ -217,4 +217,7 @@ option {
 }
 html {
   scroll-behavior: smooth;
+}
+span {
+	color: #edecec;
 }
