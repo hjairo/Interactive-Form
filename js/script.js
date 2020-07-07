@@ -282,7 +282,8 @@ activityValidator();
 
 	if (!nameValidator() || !emailValidator() || activityValidator()) {
     	console.log('input not submitted');
-    	//e.preventDefault();
+    	e.preventDefault();
+    	
     } //else { e.event.target; }
 	if (payment.value === 'credit card') {
 	cardNumberValidator();
@@ -290,8 +291,9 @@ activityValidator();
 	cvvValidator();
 		if (!cardNumberValidator() || !zipValidator() || !cvvValidator()) {
 			console.log('card info not submitted');
-			//e.preventDefault();
+			e.preventDefault();
 		} //else { e.event.target; }
 	};
   console.log('submitted');
+  return true;
 });

@@ -16,8 +16,8 @@ button {
 
 body {
   font: 1em/1.5;
-  color: rgba(6, 49, 68, 0.9);
-	background: #CDE0FB;
+  color: #a4a4a4;
+	background: #504448;
 }
 
 header {
@@ -26,8 +26,9 @@ header {
 
 h1 {
 	font-size: 2.5em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+	text-shadow: 0 .5px 0 rgba(255, 255, 255, 0.85);
 	margin: 0;
+	color: #fffeff;
 }
 
 a {
@@ -40,9 +41,9 @@ a {
 
 form {
 	padding: .875em 1.875em 1.875em;
-	background: #9BBEEF;
+	background: #fffeff;
 	border: 2px solid rgba(8, 63, 87, 0.6);
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 fieldset,
@@ -89,15 +90,15 @@ input {
 	font-size: 1em;
 	font-weight: 500;
 	padding: .8em;
-	background: #e9f6fb;
-	border: 2px solid rgb(111, 157, 220);
-	border-radius: 3px;
+	background: #f4f4f4;
+	border: 2px solid rgba(8, 63, 87, 0.6);
+	border-radius: 6px;
 	outline: none;
 }
 
 input:focus {
 	background: #fff;
-	border-color: #5e97b0;
+	border-color: #34393e;
 	transition: border-color .4s, background-color .4s;
 }
 
@@ -109,7 +110,7 @@ input[type="radio"] {
 button {
 	color: #fff;
 	padding: .55em 1.25em;
-	background: #083f57;
+	background: #3a4248;
 	margin: 1.25em 0 .5em;
 	cursor: pointer;
 	border: 2px solid black;
@@ -118,7 +119,7 @@ button {
 }
 
 button:hover {
-	background: #6F9DDC;
+	background: rgba(8, 63, 87, 0.6);
 }
 
 input, 
@@ -213,4 +214,7 @@ option {
 	label {
 		clear: both;
 	}
+}
+html {
+  scroll-behavior: smooth;
 }
