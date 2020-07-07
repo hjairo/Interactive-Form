@@ -127,8 +127,8 @@ const nameLabel = name.labels[0];
 const nameValidator = () => {
 	const nameValue = name.value;
 	if (nameValue.length > 1) {
-		name.style.borderColor = 'lightgreen';
-		nameLabel.style.color = 'lightgreen';
+		name.style.borderColor = '#9ac7b0';
+		nameLabel.style.color = '#457644';
 		nameLabel.innerHTML = 'Hello, ' + name.value;
 	} else {
 		name.style.borderColor = 'red';
@@ -148,8 +148,8 @@ const emailValidator = () => {
 	const atSymbol = emailValue.indexOf(`@`);
 	const dotSymbol = emailValue.indexOf(`.`);
 	if (atSymbol > 1 && dotSymbol > atSymbol + 1) {
-		email.style.borderColor = 'lightgreen';
-		emailLabel.style.color = 'lightgreen';
+		email.style.borderColor = '#9ac7b0';
+		emailLabel.style.color = '#457644';
 		emailLabel.innerHTML = 'Thanks!';
 		return true;
 	} else {
@@ -168,7 +168,7 @@ const activityValidator = () => {
 	let checked = 0;
 	for (let i = 0; i < activityOptions.length; i++) {
 		if (activityOptions[i].checked) {
-			activitiesHeader.style.color = 'lightgreen';
+			activitiesHeader.style.color = '#457644';
 			total.style.color = '';
 			checked += 1;
 		}
@@ -213,8 +213,8 @@ const cardNumberValidator = () => {
 		cardNumberLabel.style.color = 'red';
 		cardNumberLabel.innerHTML = 'Number between 13 and 16 digits long';
 	} else {
-		cardNumber.style.borderColor = 'lightgreen';
-		cardNumberLabel.style.color = 'lightgreen';
+		cardNumber.style.borderColor = '#9ac7b0';
+		cardNumberLabel.style.color = '#457644';
 		cardNumberLabel.innerHTML = 'Valid Card Number';
 		return true;
 	}
@@ -234,8 +234,8 @@ const zipValidator = () => {
 	const zipValue = zip.value;
 	const zipAllowed = /^[0-9]{5}$/;
 	if (zipRegex(zipValue)) {
-		zip.style.borderColor = 'lightgreen';
-		zipLabel.style.color = 'lightgreen';
+		zip.style.borderColor = '#9ac7b0';
+		zipLabel.style.color = '#457644';
 		zipLabel.innerHTML = 'Valid Zip Code';
 		return true;
 	} else {
@@ -260,8 +260,8 @@ const cvvLabel = cvv.labels[0];
 const cvvValidator = () => {
 	const cvvValue = cvv.value;
 	if (cvvRegex(cvvValue)) {
-		cvv.style.borderColor = 'lightgreen';
-		cvvLabel.style.color = 'lightgreen';
+		cvv.style.borderColor = '#9ac7b0';
+		cvvLabel.style.color = '#457644';
 		cvvLabel.innerHTML = 'Valid CVV';
 	} else {
 		cvv.style.borderColor = 'red';

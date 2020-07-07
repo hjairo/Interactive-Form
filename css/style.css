@@ -42,7 +42,7 @@ a {
 form {
 	padding: .875em 1.875em 1.875em;
 	background: #fffeff;
-	border: 2px solid rgba(8, 63, 87, 0.6);
+	border: 2px solid #34393e;
 	border-radius: 12px;
 }
 
@@ -91,14 +91,14 @@ input {
 	font-weight: 500;
 	padding: .8em;
 	background: #f4f4f4;
-	border: 2px solid rgba(8, 63, 87, 0.6);
+	border: 2px solid #34393e;
 	border-radius: 6px;
 	outline: none;
 }
 
 input:focus {
 	background: #fff;
-	border-color: #34393e;
+	border-color: rgba(8, 63, 87, 0.6);
 	transition: border-color .4s, background-color .4s;
 }
 
