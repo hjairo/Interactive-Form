@@ -181,7 +181,7 @@ const activityValidator = () => {
 		return true;
 	}
 } 
-activities.addEventListener('mouseout', (e) => {
+activities.addEventListener('mouseleave', (e) => {
 	activityValidator();
 });
 activities.addEventListener('click', (e) => {
