@@ -1,9 +1,7 @@
 // Interactive Form Project - Jairo Hernandez
-
 /*
 GOING FOR EXCEEDS EXPECTATIONS GRADE
 */
-
 //sets the focus on the name input field
 const name = document.getElementById('name');
 name.focus();
@@ -42,7 +40,6 @@ themeSelected.addEventListener('change', () => {
 				colorOptions[i].hidden = true;
 			}
 		}
-
 		if (themeSelected.value === 'heart js') {
 			if (i >= 3){
 				colorOptions[3].selected = true;
@@ -140,6 +137,7 @@ const nameValidator = () => {
 name.addEventListener('keyup', (e) => {
 	nameValidator();
 });
+
 // email input is valid if there is an '@' symbol with a '.' symbol after, in the text field
 const email = document.getElementById('mail');
 email.placeholder = 'example@email.com';
