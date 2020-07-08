@@ -56,7 +56,7 @@ themeSelected.addEventListener('change', () => {
 const activities = document.querySelector('.activities');
 const activityOptions = document.querySelectorAll('.activities input');
 const total = document.createElement('p');
-total.id = 'total';
+total.style = "text-align:right";
 total.innerHTML = 'Total: $0';
 let costTotal = 0;
 activities.appendChild(total);
