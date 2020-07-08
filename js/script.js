@@ -19,7 +19,6 @@ jobRole.addEventListener('change', () => {
 	otherJobRole.focus();
 });
 
-
 // T-shirt section
 // creates the placeholder and disables the dropdown 
 const colorsDropdown = document.getElementById('color');
@@ -130,10 +129,12 @@ const nameValidator = () => {
 		name.style.borderColor = '#9ac7b0';
 		nameLabel.style.color = '#457644';
 		nameLabel.innerHTML = 'Hello, ' + name.value;
+		return true;
 	} else {
 		name.style.borderColor = '#990000';
 		nameLabel.style.color = '#990000';
 		nameLabel.innerHTML = 'Name is required';
+		return false;
 	}
 } 
 name.addEventListener('keyup', (e) => {
@@ -146,7 +147,7 @@ const emailLabel = email.labels[0];
 const emailValidator = () => {
 	const emailValue = email.value;
 	const atSymbol = emailValue.indexOf(`@`);
-	const dotSymbol = emailValue.indexOf(`.`);
+	const dotSymbol = emailValue.indexOf(`.com`);
 	if (atSymbol > 1 && dotSymbol > atSymbol + 1) {
 		email.style.borderColor = '#9ac7b0';
 		emailLabel.style.color = '#457644';
@@ -212,6 +213,7 @@ const cardNumberValidator = () => {
 		cardNumber.style.borderColor = '#990000';
 		cardNumberLabel.style.color = '#990000';
 		cardNumberLabel.innerHTML = 'Number between 13 and 16 digits long';
+		return false;
 	} else {
 		cardNumber.style.borderColor = '#9ac7b0';
 		cardNumberLabel.style.color = '#457644';
@@ -263,10 +265,12 @@ const cvvValidator = () => {
 		cvv.style.borderColor = '#9ac7b0';
 		cvvLabel.style.color = '#457644';
 		cvvLabel.innerHTML = 'Valid CVV';
+		return true;
 	} else {
 		cvv.style.borderColor = '#990000';
 		cvvLabel.style.color = '#990000';
 		cvvLabel.innerHTML = 'Enter a 3 digit CVV';
+		return false;
 	}
 } 
 cvv.addEventListener('keyup', (e) => {
@@ -276,24 +280,24 @@ cvv.addEventListener('keyup', (e) => {
 //submit button checks to see if the validator functions are met. Otherwise it will not submit data for the form
 const submit = document.querySelector('form');
 submit.addEventListener('submit', (e) => {
-nameValidator();
-emailValidator();
-activityValidator();
-
-	if (!nameValidator() || !emailValidator() || activityValidator()) {
-    	console.log('input not submitted');
+	if (!nameValidator()) {
     	e.preventDefault();
-    	
-    } //else { e.event.target; }
-	if (payment.value === 'credit card') {
-	cardNumberValidator();
-	zipValidator();
-	cvvValidator();
-		if (!cardNumberValidator() || !zipValidator() || !cvvValidator()) {
-			console.log('card info not submitted');
-			e.preventDefault();
-		} //else { e.event.target; }
-	};
-  console.log('submitted');
-  return true;
+    }
+    if (!emailValidator()) {
+    	e.preventDefault();
+    }
+    if (!activityValidator()) {
+    	e.preventDefault();
+    }
+    if (payment.value === 'credit card') {
+		if (!cardNumberValidator()) {
+		e.preventDefault();
+		}
+		if (!zipValidator()) {
+    	e.preventDefault();
+    	}
+    	if (!cvvValidator()) {
+    	e.preventDefault();
+		}
+	}
 });
