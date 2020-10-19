@@ -1,7 +1,5 @@
-// Interactive Form Project - Jairo Hernandez
-/*
-GOING FOR EXCEEDS EXPECTATIONS GRADE
-*/
+// Interactive Form
+
 //sets the focus on the name input field
 const name = document.getElementById('name');
 name.focus();
